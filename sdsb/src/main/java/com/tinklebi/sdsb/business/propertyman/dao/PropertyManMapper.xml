@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace="com.b0.mybatis.mapper.UserMapper" -->
+<mapper namespace="com.tinklebi.sdsb.business.propertyman.dao.PropertyManMapper">
+    <insert id="insertPropertyMan">
+        INSERT INTO t_property_man(prop_id, prop_name, prop_state, prop_room_id, create_person, create_date, last_modify_person, last_modify_date)
+        VALUES (#{propId}, #{propName}, #{propState}, #{propRoomId}, #{operatorId}, NOW(), #{operatorId}, NOW())
+    </insert>
+    <update id="updatePropertyMan">
+        UPDATE t_property_man
+        <set>
+            <if test="propName != '' and propName != null">
+                prop_name = #{propName},
+            </if>
+            <if test="propState != '' and propState != null">
+                prop_state = #{propState},
+            </if>
+            <if test="propRoomId != '' and propRoomId != null">
+                prop_room_id = #{propRoomId},
+            </if>
+        </set>
+        WHERE prop_id = #{propId}
+    </update>
+    <delete id="deletePropertyMan">
+        DELETE FROM t_property_man
+        WHERE prop_id = #{propId}
+    </delete>
+
+    <select id="selectPropertyMan" resultType="com.tinklebi.sdsb.business.propertyman.entity.vo.PropertyMan">
+        SELECT
+        prop_id AS propId,
+        prop_name AS propName,
+        prop_state AS propState,
+        prop_room_id AS propRoomId
+        FROM t_property_man
+        WHERE
+        1 = 1
+        <if test="propId != '' and propId != null">
+            AND prop_id = #{propId}
+        </if>
+        <if test="propName != '' and propName != null">
+            AND prop_name = #{propName}
+        </if>
+        <if test="propState != '' and propState != null">
+            AND prop_state = #{propState}
+        </if>
+    </select>
+
+    <select id="selectById" resultType="com.tinklebi.sdsb.business.propertyman.entity.vo.PropertyMan">
+        SELECT
+            prop_id AS propId
+        FROM t_property_man
+        WHERE prop_id = #{propId}
+    </select>
+</mapper>
+

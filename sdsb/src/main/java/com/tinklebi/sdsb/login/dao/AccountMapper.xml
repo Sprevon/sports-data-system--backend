@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace="com.b0.mybatis.mapper.UserMapper" -->
+<mapper namespace="com.tinklebi.sdsb.login.dao.AccountMapper">
+    <insert id="insertAccount">
+        INSERT INTO t_account(account, password, authority, create_person, create_date, last_modify_person, last_modify_date)
+        VALUES (#{account}, #{password}, #{authority}, #{operatorId}, NOW(), #{operatorId}, NOW())
+    </insert>
+    <update id="updateAccount">
+        UPDATE t_account
+        <set>
+            <if test="password != null">
+                password = #{password},
+            </if>
+            <if test="authority != null">
+                authority = #{authority},
+            </if>
+            <if test="operatorId != null">
+                last_modify_person = #{operatorId},
+            </if>
+            <if test="operatorId != null">
+                last_modify_date = NOW(),
+            </if>
+        </set>
+        WHERE account = #{account}
+    </update>
+    <delete id="deleteAccount">
+        DELETE FROM t_account
+        WHERE account = #{account}
+    </delete>
+
+    <select id="selectAccounts" resultType="com.tinklebi.sdsb.login.entity.vo.Account">
+        SELECT
+        account,
+        password,
+        authority
+        FROM t_account
+        WHERE
+        1 = 1
+        <if test="account != null">
+            AND account = #{account}
+        </if>
+        <!-- Add conditions for other fields if needed -->
+    </select>
+
+    <select id="selectById" resultType="com.tinklebi.sdsb.login.entity.vo.Account">
+        SELECT
+            account,
+            password
+        FROM t_account
+        WHERE account = #{account}
+    </select>
+</mapper>

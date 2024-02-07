@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace="com.b0.mybatis.mapper.UserMapper" -->
+<mapper namespace="com.tinklebi.sdsb.business.device.dao.DeviceMapper">
+    <insert id="insertDevice">
+        INSERT INTO t_device(device_id, device_field, device_kind, device_state, create_person, create_date, last_modify_person, last_modify_date)
+        VALUES (#{deviceId}, #{deviceField}, #{deviceKind}, #{deviceState},  #{operatorId}, NOW(), #{operatorId}, NOW())
+    </insert>
+    <update id="updateDevice">
+        UPDATE t_device
+        <set>
+            <if test="deviceField != null and deviceField != ''">
+                device_field = #{deviceField},
+            </if>
+            <if test="deviceKind != null and deviceKind != ''">
+                device_kind = #{deviceKind},
+            </if>
+            <if test="deviceState != null and deviceState != ''">
+                device_state = #{deviceState},
+            </if>
+
+        </set>
+        WHERE device_id = #{deviceId}
+    </update>
+    <delete id="deleteDevice">
+        DELETE FROM t_device
+        WHERE device_id = #{deviceId}
+    </delete>
+
+    <select id="selectDevices" resultType="com.tinklebi.sdsb.business.device.entity.vo.Device">
+        SELECT
+        device_id AS deviceId,
+        device_field AS deviceField,
+        device_kind AS deviceKind,
+        device_state AS deviceState
+        FROM t_device
+        WHERE
+        1 = 1
+        <if test="deviceId != null and deviceId != ''">
+            AND device_id = #{deviceId}
+        </if>
+        <if test="deviceField != null and deviceField != ''">
+            AND device_field = #{deviceField}
+        </if>
+        <if test="deviceKind != null and deviceKind != ''">
+            AND device_kind = #{deviceKind}
+        </if>
+        <if test="deviceState != null and deviceState != ''">
+            AND device_state = #{deviceState}
+        </if>
+    </select>
+
+    <select id="selectById" resultType="com.tinklebi.sdsb.business.device.entity.vo.Device">
+        SELECT
+            device_id AS deviceId
+        FROM t_device
+        WHERE device_id = #{deviceId}
+    </select>
+</mapper>
+

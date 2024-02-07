@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace="com.b0.mybatis.mapper.UserMapper" -->
+<mapper namespace="com.tinklebi.sdsb.business.coach.dao.CoachMapper">
+    <insert id="insertCoach">
+        INSERT INTO t_coach(c_id, c_name, c_nation, create_person, create_date, last_modify_person, last_modify_date)
+            VALUE (#{cId}, #{cName}, #{cNation}, #{operatorId}, NOW(), #{operatorId}, NOW())
+    </insert>
+    <update id="updateCoach">
+        UPDATE t_coach
+        <set>
+            <if test="cName != '' and cName != null">
+                c_name = #{cName},
+            </if>
+            <if test="cNation != '' and CNation != null">
+                c_nation = #{cNation},
+            </if>
+        </set>
+        WHERE c_id = #{cId}
+    </update>
+    <delete id="deleteCoach">
+        DELETE FROM t_coach
+        WHERE c_id = #{cId}
+    </delete>
+
+    <select id="selectCoach" resultType="com.tinklebi.sdsb.business.coach.entity.vo.Coach">
+        SELECT
+            c_id AS cId,
+            c_name AS cName,
+            c_nation AS cNation
+        FROM t_coach
+        WHERE
+            1 = 1
+        <if test="cId != '' and cId != null">
+            and c_id = #{cId}
+        </if>
+        <if test="cName != '' and cName != null">
+            and c_name = #{cName}
+        </if>
+        <if test="cNation != '' and CNation != null">
+            and c_nation = #{cNation}
+        </if>
+    </select>
+    <select id="selectById" resultType="com.tinklebi.sdsb.business.coach.entity.vo.Coach">
+        SELECT
+            c_id AS cId
+        FROM t_coach
+        WHERE c_id = #{cId}
+    </select>
+</mapper>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace="com.b0.mybatis.mapper.UserMapper" -->
+<mapper namespace="com.tinklebi.sdsb.business.playerhealth.dao.PlayerHealthMapper">
+    <insert id="insertPlayerHealth">
+        INSERT INTO t_player_health(pl_id, pl_height, pl_weight, pl_max_heart_rate, pl_min_heart_rate, pl_avg_heart_rate, pl_total_distance, pl_sprint, create_person, create_date, last_modify_person, last_modify_date)
+        VALUES (#{plId}, #{plHeight}, #{plWeight}, #{plMaxHeartRate}, #{plMinHeartRate}, #{plAvgHeartRate}, #{plTotalDistance}, #{plSprint}, #{operatorId}, NOW(), #{operatorId}, NOW())
+    </insert>
+    <update id="updatePlayerHealth">
+        UPDATE t_player_health
+        <set>
+            <if test="plHeight != null">
+                pl_height = #{plHeight},
+            </if>
+            <if test="plWeight != null">
+                pl_weight = #{plWeight},
+            </if>
+            <if test="plMaxHeartRate != null">
+                pl_max_heart_rate = #{plMaxHeartRate},
+            </if>
+            <if test="plMinHeartRate != null">
+                pl_min_heart_rate = #{plMinHeartRate},
+            </if>
+            <if test="plAvgHeartRate != null">
+                pl_avg_heart_rate = #{plAvgHeartRate},
+            </if>
+            <if test="plTotalDistance != null">
+                pl_total_distance = #{plTotalDistance},
+            </if>
+            <if test="plSprint != null">
+                pl_sprint = #{plSprint},
+            </if>
+        </set>
+        WHERE pl_id = #{plId}
+    </update>
+    <delete id="deletePlayerHealth">
+        DELETE FROM t_player_health
+        WHERE pl_id = #{plId}
+    </delete>
+
+    <select id="selectPlayerHealths" resultType="com.tinklebi.sdsb.business.playerhealth.entity.vo.PlayerHealth">
+        SELECT
+        pl_id AS plId,
+        pl_height AS plHeight,
+        pl_weight AS plWeight,
+        pl_max_heart_rate AS plMaxHeartRate,
+        pl_min_heart_rate AS plMinHeartRate,
+        pl_avg_heart_rate AS plAvgHeartRate,
+        pl_total_distance AS plTotalDistance,
+        pl_sprint AS plSprint
+        FROM t_player_health
+        WHERE
+        1 = 1
+        <if test="plId != null">
+            AND pl_id = #{plId}
+        </if>
+        <!-- Add conditions for other fields if needed -->
+    </select>
+
+    <select id="selectById" resultType="com.tinklebi.sdsb.business.playerhealth.entity.vo.PlayerHealth">
+        SELECT
+            pl_id AS plId
+        FROM t_player_health
+        WHERE pl_id = #{plId}
+    </select>
+</mapper>

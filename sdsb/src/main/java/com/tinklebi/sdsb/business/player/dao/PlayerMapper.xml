@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace="com.b0.mybatis.mapper.UserMapper" -->
+<mapper namespace="com.tinklebi.sdsb.business.player.dao.PlayerMapper">
+    <insert id="insertPlayer">
+        INSERT INTO t_player(pl_id, pl_name, pl_nation, pl_state, pl_field, pl_position, pl_device_id, create_person, create_date, last_modify_person, last_modify_date)
+        VALUES (#{plId}, #{plName}, #{plNation}, #{plState}, #{plField}, #{plPosition}, #{plDeviceId}, #{operatorId}, NOW(), #{operatorId}, NOW())
+    </insert>
+    <update id="updatePlayer">
+        UPDATE t_player
+        <set>
+            <if test="plName != null and plName != ''">
+                pl_name = #{plName},
+            </if>
+            <if test="plNation != null and plNation != ''">
+                pl_nation = #{plNation},
+            </if>
+            <if test="plState != null and plState != ''">
+                pl_state = #{plState},
+            </if>
+            <if test="plField != null and plField != ''">
+                pl_field = #{plField},
+            </if>
+            <if test="plPosition != null and plPosition != ''">
+                pl_position = #{plPosition},
+            </if>
+        </set>
+        WHERE pl_id = #{plId}
+    </update>
+    <delete id="deletePlayer">
+        DELETE FROM t_player
+        WHERE pl_id = #{plId}
+    </delete>
+
+    <select id="selectPlayers" resultType="com.tinklebi.sdsb.business.player.entity.vo.Player">
+        SELECT
+        pl_id AS plId,
+        pl_name AS plName,
+        pl_nation AS plNation,
+        pl_state AS plState,
+        pl_field AS plField,
+        pl_position AS plPosition,
+        pl_device_id AS plDeviceId
+        FROM t_player
+        WHERE
+        1 = 1
+        <if test="plId != null">
+            AND pl_id = #{plId}
+        </if>
+        <if test="plName != null and plName != ''">
+            AND pl_name = #{plName}
+        </if>
+        <if test="plNation != null and plNation != ''">
+            AND pl_nation = #{plNation}
+        </if>
+        <if test="plState != null and plState != ''">
+            AND pl_state = #{plState}
+        </if>
+        <if test="plField != null and plField != ''">
+            AND pl_field = #{plField}
+        </if>
+        <if test="plPosition != null and plPosition != ''">
+            AND pl_position = #{plPosition}
+        </if>
+    </select>
+
+    <select id="selectById" resultType="com.tinklebi.sdsb.business.player.entity.vo.Player">
+        SELECT
+            pl_id AS plId
+        FROM t_player
+        WHERE pl_id = #{plId}
+    </select>
+</mapper>
+

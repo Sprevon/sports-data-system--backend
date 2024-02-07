@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace="com.b0.mybatis.mapper.UserMapper" -->
+<mapper namespace="com.tinklebi.sdsb.business.teamdoc.dao.TeamDocMapper">
+    <insert id="insertTeamDoc">
+        INSERT INTO t_team_doc(doc_id, doc_name, doc_major, doc_position, doc_state, create_person, create_date, last_modify_person, last_modify_date)
+        VALUES (#{docId}, #{docName}, #{docMajor}, #{docPosition}, #{docState}, #{operatorId}, NOW(), #{operatorId}, NOW())
+    </insert>
+    <update id="updateTeamDoc">
+        UPDATE t_team_doc
+        <set>
+            <if test="docName != null and docName != ''">
+                doc_name = #{docName},
+            </if>
+            <if test="docMajor != null and docMajor != ''">
+                doc_major = #{docMajor},
+            </if>
+            <if test="docPosition != null and docPosition != ''">
+                doc_position = #{docPosition},
+            </if>
+            <if test="docState != null and docState != ''">
+                doc_state = #{docState},
+            </if>
+        </set>
+        WHERE doc_id = #{docId}
+    </update>
+    <delete id="deleteTeamDoc">
+        DELETE FROM t_team_doc
+        WHERE doc_id = #{docId}
+    </delete>
+
+    <select id="selectTeamDocs" resultType="com.tinklebi.sdsb.business.teamdoc.entity.vo.TeamDoc">
+        SELECT
+        doc_id AS docId,
+        doc_name AS docName,
+        doc_major AS docMajor,
+        doc_position AS docPosition,
+        doc_state AS docState
+        FROM t_team_doc
+        WHERE
+        1 = 1
+        <if test="docId != null">
+            AND doc_id = #{docId}
+        </if>
+        <if test="docName != null and docName != ''">
+            AND doc_name = #{docName}
+        </if>
+        <if test="docMajor != null and docMajor != ''">
+            AND doc_major = #{docMajor}
+        </if>
+        <if test="docPosition != null and docPosition != ''">
+            AND doc_position = #{docPosition}
+        </if>
+        <if test="docState != null and docState != ''">
+            AND doc_state = #{docState}
+        </if>
+    </select>
+
+    <select id="selectById" resultType="com.tinklebi.sdsb.business.teamdoc.entity.vo.TeamDoc">
+        SELECT
+            doc_id AS docId
+        FROM t_team_doc
+        WHERE doc_id = #{docId}
+    </select>
+</mapper>
