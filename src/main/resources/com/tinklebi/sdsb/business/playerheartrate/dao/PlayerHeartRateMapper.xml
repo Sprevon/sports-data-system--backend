@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace="com.b0.mybatis.mapper.UserMapper" -->
+<mapper namespace="com.tinklebi.sdsb.business.playerheartrate.dao.PlayerHeartRateMapper">
+    <insert id="insertPlayerHeartRate">
+        INSERT INTO t_player_heart_rate(pl_id, pl_current_heart_rate, create_date, create_person)
+        VALUES (#{plId}, #{plCurrentHeartRate}, NOW(), #{operatorId})
+    </insert>
+    <update id="updatePlayerHeartRate">
+        UPDATE t_player_heart_rate
+        <set>
+            <if test="plCurrentHeartRate != null">
+                pl_current_heart_rate = #{plCurrentHeartRate},
+            </if>
+            <if test="operatorId != null">
+                last_modify_person = #{operatorId},
+            </if>
+            <if test="operatorId != null">
+                last_modify_date = NOW(),
+            </if>
+        </set>
+        WHERE pl_id = #{plId}
+    </update>
+    <delete id="deletePlayerHeartRate">
+        DELETE FROM t_player_heart_rate
+        WHERE pl_id = #{plId}
+    </delete>
+
+    <select id="selectPlayerHeartRates" resultType="com.tinklebi.sdsb.business.playerheartrate.entity.po.PlayerHeartRateDb">
+        SELECT DISTINCT
+        tphr.pl_id AS plId,
+        tp.pl_name AS playerName
+        FROM t_player_heart_rate tphr
+        LEFT JOIN t_player tp on tphr.pl_id = tp.pl_id
+        WHERE
+        1 = 1
+        <if test="plId != null and plId != ''">
+            AND tphr.pl_id = #{plId}
+        </if>
+        <if test="playerName != null and playerName != ''">
+            AND tp.pl_name = #{playerName}
+        </if>
+    </select>
+
+    <select id="selectById" resultType="com.tinklebi.sdsb.business.playerheartrate.entity.vo.PlayerHeartRate">
+        SELECT
+            pl_id AS plId,
+            pl_current_heart_rate AS plCurrentHeartRate,
+            create_date AS createDate
+        FROM t_player_heart_rate
+        WHERE pl_id = #{plId}
+    </select>
+</mapper>
+

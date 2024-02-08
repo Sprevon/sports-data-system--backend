@@ -87,7 +87,7 @@
                 <version>${spring-boot.version}</version>
                 <configuration>
                     <mainClass>com.tinklebi.sdsb.SdsbApplication</mainClass>
-                    <skip>true</skip>
+                    <skip>false</skip>
                 </configuration>
                 <executions>
                     <execution>

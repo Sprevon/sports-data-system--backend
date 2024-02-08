@@ -83,14 +83,14 @@ create table t_player_health
 ) comment = '运动员健康信息表';
 
 #创建运动员心率表
-# drop table player_heart_rate;
+drop table t_player_heart_rate;
 create table t_player_heart_rate
 (
     pl_id              bigint(20)     not null comment '运动员编号',
     pl_current_heart_rate  bigint(20)     not null comment '运动员平均心率',
     create_person      bigint(20)     not null comment '创建人编号',
     create_date        datetime       not null comment '创建时间',
-    constraint cons_pk primary key (pl_id)
+    constraint cons_pk primary key (create_date)
 ) comment = '运动员心率表';
 
 #创建账号表
