@@ -43,4 +43,14 @@ public class CoachController {
         CoachDb coachDb = new CoachDb(coach, LocalSessionUtils.getOperatorId());
         return service.updateCoach(coachDb);
     }
+
+    @PostMapping(value = "/testCoach")
+    @ResponseBody
+    public String testCoach(@RequestParam int number, @ModelAttribute Coach coach){
+        return coach.getCName() + "测试成功" + number;
+    }
+
+    public void testCoach(){
+        HTTPResult.buildSuccess("测试成功");
+    }
 }

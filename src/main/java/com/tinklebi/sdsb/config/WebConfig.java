@@ -14,9 +14,7 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
-                .allowedOrigins("http://112.124.17.166:8080")
-                .allowedOrigins("http://www.tinklebi.com:8080")
-                .allowedOrigins("http://localhost:8080")
+                .allowedOrigins("http://112.124.17.166:8080", "http://www.tinklebi.com:8080", "http://localhost:8080")
                 .allowedMethods("GET", "POST");
     }
 }
