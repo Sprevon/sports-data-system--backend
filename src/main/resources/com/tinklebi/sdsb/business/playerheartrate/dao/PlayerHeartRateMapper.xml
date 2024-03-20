@@ -59,26 +59,24 @@
     </select>
     
     <resultMap id="playerData" type="com.tinklebi.sdsb.business.playerheartrate.entity.po.PlayerHeartRateData">
+        <id property="plId" column="plId"/>
         <association property="playerHeartRateDb"  javaType="com.tinklebi.sdsb.business.playerheartrate.entity.po.PlayerHeartRateDb">
-            <result property="plId" column="plId"/>
             <result property="playerName" column="playerName"/>
         </association>
         <collection property="heartRateList"
                     javaType="list"
-                    ofType="com.tinklebi.sdsb.business.playerheartrate.entity.vo.PlayerHeartRate" column="plId">
-            <result property="plId" column="plId"/>
+                    ofType="com.tinklebi.sdsb.business.playerheartrate.entity.vo.PlayerHeartRate">
+            <id property="createDate" column="createDate"/>
             <result property="plCurrentHeartRate" column="plCurrentHeartRate"/>
-            <result property="createDate" column="createDate"/>
         </collection>
     </resultMap>
     
     <select id="selectPlayerData" resultMap="playerData">
-        SELECT DISTINCT
+        SELECT
         tp.pl_id AS "plId",
         tp.pl_name AS "playerName",
-        tphr.pl_id AS "plId",
-        tphr.pl_current_heart_rate AS plCurrentHeartRate,
-        tphr.create_date AS createDate
+        tphr.pl_current_heart_rate AS "plCurrentHeartRate",
+        tphr.create_date AS "createDate"
         FROM t_player_heart_rate tphr
         LEFT JOIN t_player tp on tphr.pl_id = tp.pl_id
         WHERE
