@@ -28,10 +28,15 @@
         WHERE pl_id = #{plId}
     </delete>
 
-    <select id="selectPlayerHeartRates" resultType="com.tinklebi.sdsb.business.playerheartrate.entity.po.PlayerHeartRateDb">
+    <resultMap id="PlayerHeartRateResultMap" type="com.tinklebi.sdsb.business.playerheartrate.entity.po.PlayerHeartRateDb">
+        <result property="plId" column="plId" />
+        <result property="playerName" column="playerName" />
+    </resultMap>
+
+    <select id="selectPlayerHeartRates" resultMap="PlayerHeartRateResultMap">
         SELECT DISTINCT
-        tphr.pl_id AS plId,
-        tp.pl_name AS playerName
+        tphr.pl_id AS "plId",
+        tp.pl_name AS "playerName"
         FROM t_player_heart_rate tphr
         LEFT JOIN t_player tp on tphr.pl_id = tp.pl_id
         WHERE
@@ -51,6 +56,39 @@
             create_date AS createDate
         FROM t_player_heart_rate
         WHERE pl_id = #{plId}
+    </select>
+    
+    <resultMap id="playerData" type="com.tinklebi.sdsb.business.playerheartrate.entity.po.PlayerHeartRateData">
+        <association property="playerHeartRateDb"  javaType="com.tinklebi.sdsb.business.playerheartrate.entity.po.PlayerHeartRateDb">
+            <result property="plId" column="plId"/>
+            <result property="playerName" column="playerName"/>
+        </association>
+        <collection property="heartRateList"
+                    javaType="list"
+                    ofType="com.tinklebi.sdsb.business.playerheartrate.entity.vo.PlayerHeartRate" column="plId">
+            <result property="plId" column="plId"/>
+            <result property="plCurrentHeartRate" column="plCurrentHeartRate"/>
+            <result property="createDate" column="createDate"/>
+        </collection>
+    </resultMap>
+    
+    <select id="selectPlayerData" resultMap="playerData">
+        SELECT DISTINCT
+        tp.pl_id AS "plId",
+        tp.pl_name AS "playerName",
+        tphr.pl_id AS "plId",
+        tphr.pl_current_heart_rate AS plCurrentHeartRate,
+        tphr.create_date AS createDate
+        FROM t_player_heart_rate tphr
+        LEFT JOIN t_player tp on tphr.pl_id = tp.pl_id
+        WHERE
+        1 = 1
+        <if test="plId != null and plId != ''">
+            AND tphr.pl_id = #{plId}
+        </if>
+        <if test="playerName != null and playerName != ''">
+            AND tp.pl_name = #{playerName}
+        </if>
     </select>
 </mapper>
 
