@@ -10,6 +10,8 @@ import com.tinklebi.sdsb.business.device.entity.vo.Device;
 import com.tinklebi.sdsb.business.device.service.DeviceService;
 import com.tinklebi.sdsb.utils.HTTPResult;
 import com.tinklebi.sdsb.utils.LocalSessionUtils;
+import org.apache.juli.logging.Log;
+import org.apache.juli.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -44,5 +46,13 @@ public class DeviceController {
     public HTTPResult updateDevice(@RequestBody Device device) {
         DeviceDb deviceDb = new DeviceDb(device, LocalSessionUtils.getOperatorId());
         return deviceService.updateDevice(deviceDb);
+    }
+
+    @PostMapping(value = "/test")
+    @ResponseBody
+    public String testDevice(){
+        Log log = LogFactory.getLog(DeviceController.class);
+        log.trace("Tracing!!!");
+        return "device test";
     }
 }

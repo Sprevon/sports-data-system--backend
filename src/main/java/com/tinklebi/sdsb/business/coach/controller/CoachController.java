@@ -5,6 +5,8 @@ import com.tinklebi.sdsb.business.coach.service.CoachService;
 import com.tinklebi.sdsb.business.coach.entity.vo.Coach;
 import com.tinklebi.sdsb.utils.HTTPResult;
 import com.tinklebi.sdsb.utils.LocalSessionUtils;
+import org.apache.juli.logging.Log;
+import org.apache.juli.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -44,9 +46,11 @@ public class CoachController {
         return service.updateCoach(coachDb);
     }
 
+    private final Log log = LogFactory.getLog(CoachController.class);
     @PostMapping(value = "/testCoach")
     @ResponseBody
     public String testCoach(@RequestParam int number, @ModelAttribute Coach coach){
+        log.warn("Warning!!!!");
         return coach.getCName() + "测试成功" + number;
     }
 

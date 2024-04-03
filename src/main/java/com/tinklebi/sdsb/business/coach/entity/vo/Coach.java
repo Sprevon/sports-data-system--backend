@@ -4,6 +4,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.stereotype.Component;
 
 import java.io.Serializable;
 
@@ -15,6 +19,9 @@ import java.io.Serializable;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Configuration
+@ConfigurationProperties(prefix = "coach")
+@PropertySource(value = "/properties/coach.properties")
 public class Coach implements Serializable {
     private static final long serialVersionUID = -3240160441612764454L;
     /**

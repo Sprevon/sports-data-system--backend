@@ -1,0 +1,194 @@
+2024-04-03 11:34:31.423  INFO 18376 --- [main] c.t.s.c.CoachControllerTest              : Starting CoachControllerTest using Java 19.0.2 on SPREVONLAP with PID 18376 (started by Seven in D:\Program\IntelliJ IDEA\IDEA files\SportsDataSystem--backend)
+2024-04-03 11:34:31.426 DEBUG 18376 --- [main] c.t.s.c.CoachControllerTest              : Running with Spring Boot v2.6.13, Spring v5.3.23
+2024-04-03 11:34:31.427  INFO 18376 --- [main] c.t.s.c.CoachControllerTest              : No active profile set, falling back to 1 default profile: "default"
+2024-04-03 11:34:32.957 DEBUG 18376 --- [main] org.apache.ibatis.logging.LogFactory     : Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+2024-04-03 11:34:33.281  INFO 18376 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$2584829a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-04-03 11:34:33.380  INFO 18376 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-04-03 11:34:34.145 DEBUG 18376 --- [main] o.apache.tomcat.util.IntrospectionUtils  : IntrospectionUtils: setProperty(class org.apache.coyote.http11.Http11NioProtocol port=0)
+2024-04-03 11:34:34.173 DEBUG 18376 --- [main] o.apache.tomcat.util.IntrospectionUtils  : IntrospectionUtils: setProperty(class org.apache.coyote.http11.Http11NioProtocol bindOnInit=false)
+2024-04-03 11:34:34.178 DEBUG 18376 --- [main] o.apache.tomcat.util.IntrospectionUtils  : IntrospectionUtils: setProperty(class org.apache.tomcat.util.net.NioEndpoint bindOnInit=false)
+2024-04-03 11:34:34.185 DEBUG 18376 --- [main] o.apache.tomcat.util.IntrospectionUtils  : IntrospectionUtils: setProperty(class org.apache.coyote.http11.Http11NioProtocol maxPostSize=2097152)
+2024-04-03 11:34:34.186 DEBUG 18376 --- [main] o.apache.tomcat.util.IntrospectionUtils  : IntrospectionUtils: setProperty(class org.apache.tomcat.util.net.NioEndpoint maxPostSize=2097152)
+2024-04-03 11:34:34.217 DEBUG 18376 --- [main] org.apache.catalina.core.ContainerBase   : Add child StandardHost[localhost] StandardEngine[Tomcat]
+2024-04-03 11:34:34.248 DEBUG 18376 --- [main] org.apache.catalina.core.ContainerBase   : Add child TomcatEmbeddedContext[] StandardEngine[Tomcat].StandardHost[localhost]
+2024-04-03 11:34:34.256  INFO 18376 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2024-04-03 11:34:34.258  INFO 18376 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.35] using APR version [1.7.0].
+2024-04-03 11:34:34.259  INFO 18376 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [true].
+2024-04-03 11:34:34.261  INFO 18376 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2024-04-03 11:34:34.267  INFO 18376 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1q  5 Jul 2022]
+2024-04-03 11:34:34.283 DEBUG 18376 --- [main] o.apache.tomcat.util.IntrospectionUtils  : IntrospectionUtils: setProperty(class org.apache.coyote.http11.Http11NioProtocol parseBodyMethods=POST)
+2024-04-03 11:34:34.284 DEBUG 18376 --- [main] o.apache.tomcat.util.IntrospectionUtils  : IntrospectionUtils: setProperty(class org.apache.tomcat.util.net.NioEndpoint parseBodyMethods=POST)
+2024-04-03 11:34:34.285  INFO 18376 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-04-03 11:34:34.285  INFO 18376 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2024-04-03 11:34:34.287 DEBUG 18376 --- [main] o.apache.catalina.core.StandardContext   : Starting ROOT
+2024-04-03 11:34:34.302 DEBUG 18376 --- [main] o.apache.catalina.core.StandardContext   : Configuring default Resources
+2024-04-03 11:34:34.395 DEBUG 18376 --- [main] o.apache.catalina.core.StandardContext   : Processing standard container startup
+2024-04-03 11:34:34.395 DEBUG 18376 --- [main] org.apache.catalina.loader.WebappLoader  : Starting this Loader
+2024-04-03 11:34:34.528 DEBUG 18376 --- [main] o.a.c.authenticator.AuthenticatorBase    : No SingleSignOn Valve is present
+2024-04-03 11:34:34.529 DEBUG 18376 --- [main] o.apache.catalina.core.StandardContext   : No manager found. Checking if cluster manager should be used. Cluster configured: [false], Application distributable: [false]
+2024-04-03 11:34:34.533 DEBUG 18376 --- [main] o.apache.catalina.core.StandardContext   : Configured a manager of class [org.apache.catalina.session.StandardManager]
+2024-04-03 11:34:34.539  INFO 18376 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-04-03 11:34:34.539  INFO 18376 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3073 ms
+2024-04-03 11:34:34.544 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     findClass(java.lang.ObjectCustomizer)
+2024-04-03 11:34:34.546 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     --> Returning ClassNotFoundException
+2024-04-03 11:34:34.547 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     findClass(org.springframework.boot.autoconfigure.webservices.WebServicesAutoConfigurationCustomizer)
+2024-04-03 11:34:34.548 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     --> Returning ClassNotFoundException
+2024-04-03 11:34:34.552 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     findClass(java.lang.ObjectCustomizer)
+2024-04-03 11:34:34.554 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     --> Returning ClassNotFoundException
+2024-04-03 11:34:34.557 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     findClass(org.springframework.boot.autoconfigure.webservices.WebServicesPropertiesCustomizer)
+2024-04-03 11:34:34.559 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     --> Returning ClassNotFoundException
+2024-04-03 11:34:34.564 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     findClass(java.lang.ObjectCustomizer)
+2024-04-03 11:34:34.566 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     --> Returning ClassNotFoundException
+2024-04-03 11:34:34.567 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     findClass(org.springframework.boot.web.servlet.RegistrationBeanCustomizer)
+2024-04-03 11:34:34.568 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     --> Returning ClassNotFoundException
+2024-04-03 11:34:34.569 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     findClass(org.springframework.boot.web.servlet.DynamicRegistrationBeanCustomizer)
+2024-04-03 11:34:34.571 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     --> Returning ClassNotFoundException
+2024-04-03 11:34:34.572 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     findClass(org.springframework.boot.web.servlet.ServletRegistrationBeanCustomizer)
+2024-04-03 11:34:34.574 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     --> Returning ClassNotFoundException
+2024-04-03 11:34:34.575 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     findClass(org.springframework.boot.web.servlet.ServletContextInitializerCustomizer)
+2024-04-03 11:34:34.577 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     --> Returning ClassNotFoundException
+2024-04-03 11:34:34.578 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     findClass(org.springframework.core.OrderedCustomizer)
+2024-04-03 11:34:34.579 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     --> Returning ClassNotFoundException
+2024-04-03 11:34:34.586 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     findClass(java.lang.ObjectCustomizer)
+2024-04-03 11:34:34.588 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     --> Returning ClassNotFoundException
+2024-04-03 11:34:34.589 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     findClass(org.springframework.web.filter.GenericFilterBeanCustomizer)
+2024-04-03 11:34:34.590 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     --> Returning ClassNotFoundException
+2024-04-03 11:34:34.592 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     findClass(org.springframework.web.filter.OncePerRequestFilterCustomizer)
+2024-04-03 11:34:34.594 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     --> Returning ClassNotFoundException
+2024-04-03 11:34:34.595 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     findClass(org.springframework.web.filter.RequestContextFilterCustomizer)
+2024-04-03 11:34:34.596 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     --> Returning ClassNotFoundException
+2024-04-03 11:34:34.597 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     findClass(org.springframework.boot.web.servlet.filter.OrderedRequestContextFilterCustomizer)
+2024-04-03 11:34:34.599 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     --> Returning ClassNotFoundException
+2024-04-03 11:34:34.600 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     findClass(org.springframework.boot.web.servlet.filter.OrderedFilterCustomizer)
+2024-04-03 11:34:34.602 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     --> Returning ClassNotFoundException
+2024-04-03 11:34:34.604 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     findClass(javax.servlet.FilterCustomizer)
+2024-04-03 11:34:34.606 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     --> Returning ClassNotFoundException
+2024-04-03 11:34:34.608 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     findClass(org.springframework.core.OrderedCustomizer)
+2024-04-03 11:34:34.610 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     --> Returning ClassNotFoundException
+2024-04-03 11:34:34.611 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     findClass(javax.servlet.FilterCustomizer)
+2024-04-03 11:34:34.613 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     --> Returning ClassNotFoundException
+2024-04-03 11:34:34.614 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     findClass(org.springframework.beans.factory.BeanNameAwareCustomizer)
+2024-04-03 11:34:34.616 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     --> Returning ClassNotFoundException
+2024-04-03 11:34:34.617 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     findClass(org.springframework.beans.factory.AwareCustomizer)
+2024-04-03 11:34:34.619 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     --> Returning ClassNotFoundException
+2024-04-03 11:34:34.621 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     findClass(org.springframework.context.EnvironmentAwareCustomizer)
+2024-04-03 11:34:34.623 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     --> Returning ClassNotFoundException
+2024-04-03 11:34:34.624 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     findClass(org.springframework.beans.factory.AwareCustomizer)
+2024-04-03 11:34:34.626 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     --> Returning ClassNotFoundException
+2024-04-03 11:34:34.627 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     findClass(org.springframework.core.env.EnvironmentCapableCustomizer)
+2024-04-03 11:34:34.629 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     --> Returning ClassNotFoundException
+2024-04-03 11:34:34.630 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     findClass(org.springframework.web.context.ServletContextAwareCustomizer)
+2024-04-03 11:34:34.631 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     --> Returning ClassNotFoundException
+2024-04-03 11:34:34.633 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     findClass(org.springframework.beans.factory.AwareCustomizer)
+2024-04-03 11:34:34.634 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     --> Returning ClassNotFoundException
+2024-04-03 11:34:34.635 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     findClass(org.springframework.beans.factory.InitializingBeanCustomizer)
+2024-04-03 11:34:34.637 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     --> Returning ClassNotFoundException
+2024-04-03 11:34:34.638 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     findClass(org.springframework.beans.factory.DisposableBeanCustomizer)
+2024-04-03 11:34:34.640 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     --> Returning ClassNotFoundException
+2024-04-03 11:34:34.649 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     findClass(java.lang.ObjectCustomizer)
+2024-04-03 11:34:34.652 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     --> Returning ClassNotFoundException
+2024-04-03 11:34:34.654 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     findClass(org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfigurationCustomizer)
+2024-04-03 11:34:34.657 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     --> Returning ClassNotFoundException
+2024-04-03 11:34:34.665 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     findClass(java.lang.ObjectCustomizer)
+2024-04-03 11:34:34.668 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     --> Returning ClassNotFoundException
+2024-04-03 11:34:34.670 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     findClass(org.springframework.web.filter.GenericFilterBeanCustomizer)
+2024-04-03 11:34:34.672 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     --> Returning ClassNotFoundException
+2024-04-03 11:34:34.674 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     findClass(org.springframework.web.filter.OncePerRequestFilterCustomizer)
+2024-04-03 11:34:34.676 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     --> Returning ClassNotFoundException
+2024-04-03 11:34:34.679 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     findClass(org.springframework.web.filter.FormContentFilterCustomizer)
+2024-04-03 11:34:34.681 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     --> Returning ClassNotFoundException
+2024-04-03 11:34:34.684 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     findClass(org.springframework.boot.web.servlet.filter.OrderedFormContentFilterCustomizer)
+2024-04-03 11:34:34.687 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     --> Returning ClassNotFoundException
+2024-04-03 11:34:34.689 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     findClass(org.springframework.boot.web.servlet.filter.OrderedFilterCustomizer)
+2024-04-03 11:34:34.691 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     --> Returning ClassNotFoundException
+2024-04-03 11:34:34.693 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     findClass(javax.servlet.FilterCustomizer)
+2024-04-03 11:34:34.695 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     --> Returning ClassNotFoundException
+2024-04-03 11:34:34.697 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     findClass(org.springframework.core.OrderedCustomizer)
+2024-04-03 11:34:34.699 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     --> Returning ClassNotFoundException
+2024-04-03 11:34:34.701 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     findClass(javax.servlet.FilterCustomizer)
+2024-04-03 11:34:34.704 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     --> Returning ClassNotFoundException
+2024-04-03 11:34:34.707 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     findClass(org.springframework.beans.factory.BeanNameAwareCustomizer)
+2024-04-03 11:34:34.710 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     --> Returning ClassNotFoundException
+2024-04-03 11:34:34.712 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     findClass(org.springframework.beans.factory.AwareCustomizer)
+2024-04-03 11:34:34.714 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     --> Returning ClassNotFoundException
+2024-04-03 11:34:34.715 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     findClass(org.springframework.context.EnvironmentAwareCustomizer)
+2024-04-03 11:34:34.717 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     --> Returning ClassNotFoundException
+2024-04-03 11:34:34.719 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     findClass(org.springframework.beans.factory.AwareCustomizer)
+2024-04-03 11:34:34.721 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     --> Returning ClassNotFoundException
+2024-04-03 11:34:34.722 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     findClass(org.springframework.core.env.EnvironmentCapableCustomizer)
+2024-04-03 11:34:34.724 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     --> Returning ClassNotFoundException
+2024-04-03 11:34:34.725 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     findClass(org.springframework.web.context.ServletContextAwareCustomizer)
+2024-04-03 11:34:34.728 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     --> Returning ClassNotFoundException
+2024-04-03 11:34:34.729 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     findClass(org.springframework.beans.factory.AwareCustomizer)
+2024-04-03 11:34:34.731 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     --> Returning ClassNotFoundException
+2024-04-03 11:34:34.732 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     findClass(org.springframework.beans.factory.InitializingBeanCustomizer)
+2024-04-03 11:34:34.734 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     --> Returning ClassNotFoundException
+2024-04-03 11:34:34.736 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     findClass(org.springframework.beans.factory.DisposableBeanCustomizer)
+2024-04-03 11:34:34.738 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     --> Returning ClassNotFoundException
+2024-04-03 11:34:34.743 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     findClass(java.lang.ObjectCustomizer)
+2024-04-03 11:34:34.746 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     --> Returning ClassNotFoundException
+2024-04-03 11:34:34.747 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     findClass(org.springframework.web.filter.GenericFilterBeanCustomizer)
+2024-04-03 11:34:34.749 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     --> Returning ClassNotFoundException
+2024-04-03 11:34:34.750 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     findClass(org.springframework.web.filter.OncePerRequestFilterCustomizer)
+2024-04-03 11:34:34.752 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     --> Returning ClassNotFoundException
+2024-04-03 11:34:34.754 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     findClass(org.springframework.web.filter.CharacterEncodingFilterCustomizer)
+2024-04-03 11:34:34.757 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     --> Returning ClassNotFoundException
+2024-04-03 11:34:34.759 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     findClass(org.springframework.boot.web.servlet.filter.OrderedCharacterEncodingFilterCustomizer)
+2024-04-03 11:34:34.761 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     --> Returning ClassNotFoundException
+2024-04-03 11:34:34.763 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     findClass(org.springframework.boot.web.servlet.filter.OrderedFilterCustomizer)
+2024-04-03 11:34:34.765 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     --> Returning ClassNotFoundException
+2024-04-03 11:34:34.767 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     findClass(javax.servlet.FilterCustomizer)
+2024-04-03 11:34:34.769 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     --> Returning ClassNotFoundException
+2024-04-03 11:34:34.771 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     findClass(org.springframework.core.OrderedCustomizer)
+2024-04-03 11:34:34.773 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     --> Returning ClassNotFoundException
+2024-04-03 11:34:34.775 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     findClass(javax.servlet.FilterCustomizer)
+2024-04-03 11:34:34.777 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     --> Returning ClassNotFoundException
+2024-04-03 11:34:34.779 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     findClass(org.springframework.beans.factory.BeanNameAwareCustomizer)
+2024-04-03 11:34:34.781 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     --> Returning ClassNotFoundException
+2024-04-03 11:34:34.782 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     findClass(org.springframework.beans.factory.AwareCustomizer)
+2024-04-03 11:34:34.784 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     --> Returning ClassNotFoundException
+2024-04-03 11:34:34.786 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     findClass(org.springframework.context.EnvironmentAwareCustomizer)
+2024-04-03 11:34:34.788 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     --> Returning ClassNotFoundException
+2024-04-03 11:34:34.789 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     findClass(org.springframework.beans.factory.AwareCustomizer)
+2024-04-03 11:34:34.791 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     --> Returning ClassNotFoundException
+2024-04-03 11:34:34.792 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     findClass(org.springframework.core.env.EnvironmentCapableCustomizer)
+2024-04-03 11:34:34.794 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     --> Returning ClassNotFoundException
+2024-04-03 11:34:34.795 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     findClass(org.springframework.web.context.ServletContextAwareCustomizer)
+2024-04-03 11:34:34.798 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     --> Returning ClassNotFoundException
+2024-04-03 11:34:34.799 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     findClass(org.springframework.beans.factory.AwareCustomizer)
+2024-04-03 11:34:34.801 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     --> Returning ClassNotFoundException
+2024-04-03 11:34:34.802 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     findClass(org.springframework.beans.factory.InitializingBeanCustomizer)
+2024-04-03 11:34:34.803 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     --> Returning ClassNotFoundException
+2024-04-03 11:34:34.804 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     findClass(org.springframework.beans.factory.DisposableBeanCustomizer)
+2024-04-03 11:34:34.806 DEBUG 18376 --- [main] o.a.c.loader.WebappClassLoaderBase       :     --> Returning ClassNotFoundException
+2024-04-03 11:34:34.822 DEBUG 18376 --- [main] org.apache.catalina.core.ContainerBase   : Add child StandardWrapper[dispatcherServlet] StandardEngine[Tomcat].StandardHost[localhost].TomcatEmbeddedContext[]
+2024-04-03 11:34:34.824 DEBUG 18376 --- [main] org.apache.catalina.core.ContainerBase   : Add child StandardWrapper[messageDispatcherServlet] StandardEngine[Tomcat].StandardHost[localhost].TomcatEmbeddedContext[]
+2024-04-03 11:34:34.865 DEBUG 18376 --- [main] o.apache.catalina.core.StandardContext   : Configuring application event listeners
+2024-04-03 11:34:34.865 DEBUG 18376 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Sending application start events
+2024-04-03 11:34:34.870 DEBUG 18376 --- [main] o.a.catalina.session.StandardManager     : Start: Loading persisted sessions
+2024-04-03 11:34:34.871 DEBUG 18376 --- [main] o.a.catalina.session.StandardManager     : Loading persisted sessions from [SESSIONS.ser]
+2024-04-03 11:34:34.874 DEBUG 18376 --- [main] o.a.catalina.session.StandardManager     : No persisted data file found
+2024-04-03 11:34:34.874 DEBUG 18376 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Starting filters
+2024-04-03 11:34:34.875 DEBUG 18376 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       :  Starting filter 'requestContextFilter'
+2024-04-03 11:34:34.880 DEBUG 18376 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       :  Starting filter 'Tomcat WebSocket (JSR356) Filter'
+2024-04-03 11:34:34.881 DEBUG 18376 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       :  Starting filter 'characterEncodingFilter'
+2024-04-03 11:34:34.882 DEBUG 18376 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       :  Starting filter 'formContentFilter'
+2024-04-03 11:34:34.882 DEBUG 18376 --- [main] o.apache.catalina.core.StandardContext   : Starting completed
+2024-04-03 11:34:34.888 DEBUG 18376 --- [main] org.apache.catalina.mapper.Mapper        : Registered host [localhost]
+2024-04-03 11:34:34.890 DEBUG 18376 --- [main] o.apache.catalina.mapper.MapperListener  : Register Wrapper [dispatcherServlet] in Context [] for service [StandardService[Tomcat]]
+2024-04-03 11:34:34.890 DEBUG 18376 --- [main] o.apache.catalina.mapper.MapperListener  : Register Wrapper [messageDispatcherServlet] in Context [] for service [StandardService[Tomcat]]
+2024-04-03 11:34:34.891 DEBUG 18376 --- [main] o.apache.catalina.mapper.MapperListener  : Register Context [] for service [StandardService[Tomcat]]
+2024-04-03 11:34:34.891 DEBUG 18376 --- [main] o.apache.catalina.mapper.MapperListener  : Register host [localhost] at domain [null] for service [StandardService[Tomcat]]
+2024-04-03 11:34:35.146  INFO 18376 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2024-04-03 11:34:35.523  INFO 18376 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2024-04-03 11:34:37.865  INFO 18376 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2024-04-03 11:34:39.173  INFO 18376 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring TestDispatcherServlet ''
+2024-04-03 11:34:39.173  INFO 18376 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-04-03 11:34:39.174  INFO 18376 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2024-04-03 11:34:39.319 DEBUG 18376 --- [http-nio-auto-1-Acceptor] o.apache.tomcat.util.threads.LimitLatch  : Counting up[http-nio-auto-1-Acceptor] latch=0
+2024-04-03 11:34:39.323  INFO 18376 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 59081 (http) with context path ''
+2024-04-03 11:34:39.352  INFO 18376 --- [main] c.t.s.c.CoachControllerTest              : Started CoachControllerTest in 8.604 seconds (JVM running for 10.283)
+2024-04-03 11:34:39.861 DEBUG 18376 --- [main] c.t.s.b.d.controller.DeviceController    : Tracing!!!
+2024-04-03 11:34:39.939  WARN 18376 --- [main] c.t.s.b.c.controller.CoachController     : Warning!!!!
+2024-04-03 11:34:40.005  INFO 18376 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2024-04-03 11:34:40.009  INFO 18376 --- [SpringApplicationShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
