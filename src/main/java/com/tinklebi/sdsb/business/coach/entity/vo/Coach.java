@@ -21,7 +21,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Configuration
 @ConfigurationProperties(prefix = "coach")
-@PropertySource(value = "/properties/coach.properties")
+//@PropertySource(value = "/properties/coach.properties")
 public class Coach implements Serializable {
     private static final long serialVersionUID = -3240160441612764454L;
     /**
