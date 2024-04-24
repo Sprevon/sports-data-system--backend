@@ -3,6 +3,7 @@ package com.tinklebi.sdsb.notes.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -18,6 +19,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "t_author")
+@Document(collection = "testCol")
 public class Author implements Serializable {
     private static final long serialVersionUID = -6462933427484058074L;
     @Id
@@ -30,6 +32,8 @@ public class Author implements Serializable {
 
     @OneToMany(mappedBy = "author")
     private List<Article> articleList;
+
+    private String id;
 
     @Override
     public String toString(){

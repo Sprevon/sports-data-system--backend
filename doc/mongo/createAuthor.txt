@@ -1,0 +1,9 @@
+db.createCollection("testCol");
+
+db.testCol.insertMany([
+    {authId: 1, authName: "Mike"},
+    {authId: 2, authName: "Jack"},
+    {authId: 3, authName: "Tom"},
+    {authId: 4, authName: "Jerry"},
+    {authId: 5, authName: "John"}
+]);
