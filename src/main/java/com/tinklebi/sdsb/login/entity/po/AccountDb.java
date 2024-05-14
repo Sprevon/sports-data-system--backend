@@ -20,7 +20,7 @@ public class AccountDb extends Account {
     private String operatorId;
 
     public AccountDb(Account account, String operatorId) {
-        super(account.getAccount(), account.getPassword(), account.getAuthority());
+        super(account.getUsername(), account.getPassword(), account.getAuthority());
         this.operatorId = operatorId;
     }
 }

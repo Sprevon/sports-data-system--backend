@@ -21,8 +21,8 @@ public class Account implements Serializable {
     /**
      * 账号
      */
-    @JsonProperty("account")
-    private String account;
+    @JsonProperty("username")
+    private String username;
 
     /**
      * 密码

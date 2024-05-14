@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tinklebi.sdsb.security.dao.SecurityMapper">
+
+    <resultMap id="MyUserMap" type="com.tinklebi.sdsb.security.entity.MyUser">
+        <id property="username" column="username"/>
+        <result property="password" column="password"/>
+        <collection property="myAuthorities" ofType="com.tinklebi.sdsb.security.entity.MyAuthority"
+                    column="username" select="findAuthorityByName"/>
+    </resultMap>
+    
+    <select id="findUserByName" resultMap="MyUserMap">
+        SELECT username, password
+        FROM t_user
+        WHERE username = #{username}
+    </select>
+
+    <select id="findAuthorityByName" resultType="com.tinklebi.sdsb.security.entity.MyAuthority">
+        SELECT ta.authority
+        FROM t_authority ta
+        JOIN t_user tu on ta.username = tu.username
+        WHERE ta.username = #{username}
+    </select>
+    <select id="findAllByMyAuthorities" resultType="com.tinklebi.sdsb.security.entity.MyAuthority"></select>
+</mapper>

@@ -6,7 +6,7 @@
 <mapper namespace="com.tinklebi.sdsb.login.dao.AccountMapper">
     <insert id="insertAccount">
         INSERT INTO t_account(account, password, authority, create_person, create_date, last_modify_person, last_modify_date)
-        VALUES (#{account}, #{password}, #{authority}, #{operatorId}, NOW(), #{operatorId}, NOW())
+        VALUES (#{username}, #{password}, #{authority}, #{operatorId}, NOW(), #{operatorId}, NOW())
     </insert>
     <update id="updateAccount">
         UPDATE t_account
@@ -24,11 +24,11 @@
                 last_modify_date = NOW(),
             </if>
         </set>
-        WHERE account = #{account}
+        WHERE account = #{username}
     </update>
     <delete id="deleteAccount">
         DELETE FROM t_account
-        WHERE account = #{account}
+        WHERE account = #{username}
     </delete>
 
     <select id="selectAccounts" resultType="com.tinklebi.sdsb.login.entity.vo.Account">
@@ -40,7 +40,7 @@
         WHERE
         1 = 1
         <if test="account != null">
-            AND account = #{account}
+            AND account = #{username}
         </if>
         <!-- Add conditions for other fields if needed -->
     </select>
@@ -50,6 +50,6 @@
             account,
             password
         FROM t_account
-        WHERE account = #{account}
+        WHERE account = #{username}
     </select>
 </mapper>

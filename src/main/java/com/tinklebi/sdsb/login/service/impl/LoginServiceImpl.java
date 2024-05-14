@@ -22,7 +22,7 @@ public class LoginServiceImpl implements LoginService {
 
     @Override
     public HTTPResult login(Account account) {
-        if (account.getAccount() == null || account.getPassword() == null){
+        if (account.getUsername() == null || account.getPassword() == null){
             return HTTPResult.buildFault("登录信息不完整");
         }else {
             Account personAcc = accountMapper.selectById(new AccountDb(account, ""));
