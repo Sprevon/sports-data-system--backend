@@ -143,7 +143,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                     response.setContentType("application/json;charset=utf-8");
                     response.setStatus(401);
                     PrintWriter pw = response.getWriter();
-                    pw.write(new ObjectMapper().writeValueAsString(HTTPResult.buildFault("未登录访问失败")));
+                    pw.write(new ObjectMapper().writeValueAsString(HTTPResult.buildInvalid()));
                     pw.flush();
                     pw.close();
                 }));

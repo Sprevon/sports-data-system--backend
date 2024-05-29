@@ -79,4 +79,6 @@ public class HTTPResult implements Serializable {
     public static HTTPResult buildFault(String message){
         return new HTTPResult(message, CODE_SERVER_ERROR);
     }
+
+    public static HTTPResult buildInvalid(){return new HTTPResult("Invalid user", CODE_INVALID);}
 }

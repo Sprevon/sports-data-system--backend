@@ -11,5 +11,6 @@ public class Constants {
     public static final int CODE_SUCCESS = 200;
     public static final int CODE_CLIENT_ERROR = 404;
     public static final int CODE_SERVER_ERROR = 500;
+    public static final int CODE_INVALID = 401;
 
 }
