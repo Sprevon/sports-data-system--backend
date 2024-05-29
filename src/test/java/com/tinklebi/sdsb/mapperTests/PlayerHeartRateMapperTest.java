@@ -8,6 +8,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mybatis.spring.boot.test.autoconfigure.MybatisTest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.util.List;
@@ -20,9 +21,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
  * @Author LeonBwChen
  * @Date 2024/3/20 11:40
  */
-@ExtendWith(SpringExtension.class)
-@MybatisTest
-@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
+@SpringBootTest
 public class PlayerHeartRateMapperTest {
     @Autowired
     private PlayerHeartRateMapper playerHeartRateMapper;
